@@ -2,6 +2,8 @@
 
 A lightweight, zero-dependency GitHub Action to ping your ClockingPulse Heartbeat Monitors.
 
+👉 **Get your free Heartbeat Token at [clockingpulse.com](https://clockingpulse.com)**
+
 Perfect for monitoring CI/CD deployments, backup scripts, and cron jobs.
 
 ## Usage
@@ -51,7 +53,7 @@ jobs:
 
 | Input | Description | Required | Default |
 | --- | --- | --- | --- |
-| `token` | The unique heartbeat token from your ClockingPulse dashboard | **Yes** | `null` |
+| `token` | The unique heartbeat token from your [ClockingPulse dashboard](https://clockingpulse.com) | **Yes** | `null` |
 | `state` | The state of the job (`run`, `complete`, `fail`) | No | `run` |
 
 ## How it works
