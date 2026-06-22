@@ -11,8 +11,23 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
       
+      - name: Notify ClockingPulse (Start)
+        uses: ./
+        with:
+          token: ${{ secrets.CLOCKING_PULSE_TOKEN }}
+          state: 'run'
+          api_url: 'https://clock-pulse.vercel.app'
+          
       - name: Run Dummy Test
         run: |
           echo "Testing ClockingPulse Pipeline Webhook!"
           sleep 5
           echo "Test passed."
+          
+      - name: Notify ClockingPulse (Complete)
+        if: always()
+        uses: ./
+        with:
+          token: ${{ secrets.CLOCKING_PULSE_TOKEN }}
+          state: ${{ job.status == 'success' && 'complete' || 'fail' }}
+          api_url: 'https://clock-pulse.vercel.app'
