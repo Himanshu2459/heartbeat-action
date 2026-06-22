@@ -1,0 +1,18 @@
+name: Test Pipeline
+on:
+  workflow_dispatch: # This allows you to manually click "Run workflow" later
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Run Dummy Test
+        run: |
+          echo "Testing ClockingPulse Pipeline Webhook!"
+          sleep 5
+          echo "Test passed."
