@@ -1,0 +1,19 @@
+name: 'ClockingPulse Heartbeat'
+description: 'Ping your ClockingPulse heartbeat monitor to track CI/CD deployments and cron jobs.'
+author: 'ClockingPulse'
+branding:
+  icon: 'activity'
+  color: 'green'
+
+inputs:
+  token:
+    description: 'The unique heartbeat token from your ClockingPulse dashboard'
+    required: true
+  state:
+    description: 'The state of the job. Must be one of: run, complete, fail. Defaults to run.'
+    required: false
+    default: 'run'
+
+runs:
+  using: 'node20'
+  main: 'index.js'
