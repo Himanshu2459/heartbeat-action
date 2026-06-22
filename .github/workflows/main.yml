@@ -16,7 +16,7 @@ jobs:
         with:
           token: ${{ secrets.CLOCKING_PULSE_TOKEN }}
           state: 'run'
-          api_url: 'https://clock-pulse.vercel.app'
+          api_url: 'https://www.clockingpulse.com'
           
       - name: Run Dummy Test
         run: |
@@ -30,4 +30,4 @@ jobs:
         with:
           token: ${{ secrets.CLOCKING_PULSE_TOKEN }}
           state: ${{ job.status == 'success' && 'complete' || 'fail' }}
-          api_url: 'https://clock-pulse.vercel.app'
+          api_url: 'https://www.clockingpulse.com'
