@@ -59,3 +59,14 @@ jobs:
 ## How it works
 
 This action uses native Node 20 `fetch` to ping the `https://clockingpulse.com/api/heartbeat/{token}?state={state}` endpoint. Because it has **zero dependencies**, it runs blazingly fast and adds virtually no overhead to your CI pipeline.
+
+## 🚀 More than just Heartbeats
+
+When you create your free account on [ClockingPulse](https://clockingpulse.com), you don't just get Heartbeats. Your workspace comes fully equipped with a suite of reliability tools:
+
+- 🟢 **Uptime Monitors**: Ping your website or API every 60 seconds (HTTP/TCP/DNS) from multiple global regions.
+- 📊 **Beautiful Status Pages**: Generate a public, branded status page to build trust with your users.
+- 💰 **AWS Cost Intelligence**: Sync your AWS billing data to detect terrifying infrastructure cost anomalies before the bill arrives.
+- 🚨 **Multi-Channel Alerting**: Route your alerts to Slack, Discord, Email, or Webhooks instantly.
+
+**[Start monitoring your infrastructure for free today.](https://clockingpulse.com)**
