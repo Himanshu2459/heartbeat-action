@@ -12,7 +12,8 @@ if (!validStates.includes(state)) {
   process.exit(1);
 }
 
-const url = `https://clockingpulse.com/api/heartbeat/${token}?state=${state}`;
+const baseUrl = process.env.INPUT_API_URL || 'https://clockingpulse.com';
+const url = `${baseUrl}/api/heartbeat/${token}?state=${state}`;
 
 console.log(`📡 Pinging ClockingPulse Heartbeat: ${url}`);
 

@@ -13,6 +13,10 @@ inputs:
     description: 'The state of the job. Must be one of: run, complete, fail. Defaults to run.'
     required: false
     default: 'run'
+  api_url:
+    description: 'Optional custom ClockingPulse API URL (e.g. for self-hosted)'
+    required: false
+    default: 'https://clockingpulse.com'
 
 runs:
   using: 'node20'
