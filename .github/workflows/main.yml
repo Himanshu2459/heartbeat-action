@@ -25,9 +25,17 @@ jobs:
           echo "Test passed."
           
       - name: Notify ClockingPulse (Complete)
-        if: always()
+        if: success()
         uses: ./
         with:
           token: ${{ secrets.CLOCKING_PULSE_TOKEN }}
-          state: ${{ job.status == 'success' && 'complete' || 'fail' }}
+          state: 'complete'
+          api_url: 'https://www.clockingpulse.com'
+
+      - name: Notify ClockingPulse (Fail)
+        if: failure()
+        uses: ./
+        with:
+          token: ${{ secrets.CLOCKING_PULSE_TOKEN }}
+          state: 'fail'
           api_url: 'https://www.clockingpulse.com'
